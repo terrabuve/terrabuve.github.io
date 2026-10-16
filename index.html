@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="TerraBūve — būvniecības, renovācijas un apdares pakalpojumi. Kvalitāte, uz kuru var paļauties.">
+  <title>TerraBūve | Būvējam ar pārliecību</title>
+  <style>
+    :root {
+      --black: #111111;
+      --dark: #1b1b1b;
+      --yellow: #ffd21f;
+      --white: #ffffff;
+      --gray: #b9b9b9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(17, 17, 17, .96);
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: var(--yellow); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: .95rem;
+    }
+
+    .nav-links a:hover { color: var(--yellow); }
+
+    .hero {
+      padding: 105px 0 115px;
+      background:
+        linear-gradient(100deg, rgba(0,0,0,.94), rgba(0,0,0,.64)),
+        repeating-linear-gradient(
+          135deg,
+          #202020 0px,
+          #202020 2px,
+          #171717 2px,
+          #171717 12px
+        );
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .8rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      max-width: 800px;
+      font-size: clamp(2.7rem, 7vw, 5.5rem);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    h1 span { color: var(--yellow); }
+
+    .hero p {
+      max-width: 620px;
+      color: #dedede;
+      font-size: 1.15rem;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      border: 2px solid var(--yellow);
+      background: var(--yellow);
+      color: var(--black);
+      font-weight: 800;
+      border-radius: 4px;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--yellow);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--yellow);
+      margin-left: 10px;
+    }
+
+    section { padding: 80px 0; }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .section-title span { color: var(--yellow); }
+
+    .section-intro {
+      color: var(--gray);
+      max-width: 650px;
+      margin-bottom: 36px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      background: var(--dark);
+      padding: 28px;
+      border: 1px solid #343434;
+      border-top: 3px solid var(--yellow);
+      border-radius: 5px;
+    }
+
+    .service .number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+
+    .service h3 { margin-bottom: 10px; font-size: 1.25rem; }
+
+    .service p { color: var(--gray); }
+
+    .about { background: #1b1b1b; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-copy p {
+      color: var(--gray);
+      margin-top: 18px;
+    }
+
+    .promise {
+      border-left: 4px solid var(--yellow);
+      padding: 24px;
+      background: #242424;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .promise span { color: var(--yellow); }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-item {
+      min-height: 180px;
+      padding: 24px;
+      background: linear-gradient(145deg, #303030, #191919);
+      border: 1px solid #383838;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+
+    .gallery-item span {
+      color: var(--yellow);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gallery-item h3 { margin-top: 6px; }
+
+    .gallery-note {
+      color: var(--gray);
+      margin-top: 18px;
+      font-size: .9rem;
+    }
+
+    .contact { background: var(--yellow); color: var(--black); }
+
+    .contact .section-title span { color: #555; }
+
+    .contact .section-intro { color: #333; }
+
+    .contact-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .contact-panel p { margin-top: 8px; }
+
+    .contact .button {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--yellow);
+    }
+
+    .contact .button:hover {
+      background: transparent;
+      color: var(--black);
+    }
+
+    footer {
+      padding: 25px 0;
+      color: var(--gray);
+      font-size: .9rem;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 760px) {
+      nav { padding: 15px 0; align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 12px 18px; }
+      .hero { padding: 75px 0; }
+      .button-outline { margin: 12px 0 0; }
+      .services, .gallery, .about-grid { grid-template-columns: 1fr; }
+      .about-grid { gap: 25px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#sakums">TERRA<span>BŪVE.</span></a>
+      <div class="nav-links">
+        <a href="#sakums">Sākums</a>
+        <a href="#pakalpojumi">Pakalpojumi</a>
+        <a href="#mums">Par mums</a>
+        <a href="#darbi">Mūsu darbi</a>
+        <a href="#kontakti">Kontakti</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="sakums">
+      <div class="container">
+        <div class="eyebrow">TerraBūve · Būvniecība un renovācija</div>
+        <h1>Būvējam šodien.<br><span>Radām vērtību rītdienai.</span></h1>
+        <p>
+          Pārdomāti risinājumi būvniecībā, renovācijā un apdarē.
+          Mūsu mērķis ir kvalitatīvs rezultāts un godīga sadarbība.
+        </p>
+        <a class="button" href="#kontakti">Sazināties ar mums</a>
+        <a class="button button-outline" href="#pakalpojumi">Mūsu pakalpojumi</a>
+      </div>
+    </section>
+
+    <section id="pakalpojumi">
+      <div class="container">
+        <h2 class="section-title">Ko mēs <span>darām</span></h2>
+        <p class="section-intro">
+          Praktiski risinājumi tavam projektam — no ieceres līdz rūpīgi
+          paveiktam darbam.
+        </p>
+        <div class="services">
+          <article class="service">
+            <div class="number">01</div>
+            <h3>Būvniecība</h3>
+            <p>Būvniecības darbi ar uzmanību pret detaļām, materiāliem un izpildījuma kvalitāti.</p>
+          </article>
+          <article class="service">
+            <div class="number">02</div>
+            <h3>Renovācija</h3>
+            <p>Telpu un īpašumu atjaunošana, pielāgojot tos tavām vajadzībām un iecerēm.</p>
+          </article>
+          <article class="service">
+            <div class="number">03</div>
+            <h3>Apdares darbi</h3>
+            <p>Rūpīga apdare, kas piešķir telpai pabeigtu izskatu un patīkamu noskaņu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="mums">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="eyebrow">Mūsu pieeja</div>
+          <h2 class="section-title">Kvalitāte sākas ar <span>attieksmi.</span></h2>
+          <p>
+            TerraBūve tic atbildīgam darbam, skaidrai komunikācijai
+            un rūpīgi pārdomātam rezultātam. Katrs projekts sākas ar
+            sarunu par tavām vajadzībām.
+          </p>
+          <p>
+            Pastāsti par savu ieceri — kopā varēsim apspriest nākamos soļus.
+          </p>
+        </div>
+        <div class="promise">
+          “Labs rezultāts nav nejaušība. Tas ir <span>rūpīga darba</span>
+          un atbildīgas attieksmes rezultāts.”
+        </div>
+      </div>
+    </section>
+
+    <section id="darbi">
+      <div class="container">
+        <h2 class="section-title">Mūsu <span>darbi</span></h2>
+        <p class="section-intro">
+          Šeit būs vieta taviem reālajiem projektiem un paveikto darbu fotogrāfijām.
+        </p>
+        <div class="gallery">
+          <article class="gallery-item">
+            <span>Projekts 01</span>
+            <h3>Būvniecības darbi</h3>
+          </article>
+          <article class="gallery-item">
+            <span>Projekts 02</span>
+            <h3>Renovācija</h3>
+          </article>
+          <article class="gallery-item">
+            <span>Projekts 03</span>
+            <h3>Telpu apdare</h3>
+          </article>
+        </div>
+        <p class="gallery-note">
+          Piezīme: šie ir pagaidu laukumi. Vēlāk aizvietosim tos ar tavām
+          fotogrāfijām un reāliem projektu aprakstiem.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakti">
+      <div class="container contact-panel">
+        <div>
+          <h2 class="section-title">Sāksim tavu <span>projektu?</span></h2>
+          <p>Sazinies ar mums, lai pārrunātu savu ieceri.</p>
+          <p><strong>TerraBūve</strong> · Būvniecība un renovācija</p>
+        </div>
+        <a class="button" href="mailto:info@terrabuve.lv">Rakstīt e-pastu</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> TerraBūve. Visas tiesības aizsargātas.</span>
+      <span>Būvējam ar pārliecību.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
